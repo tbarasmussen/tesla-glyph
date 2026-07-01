@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Returning to Tesla Glyph Charger…</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body style="font-family: sans-serif; text-align: center; padding-top: 3em;">
+  <p>Returning to the app…</p>
+  <p><a id="fallback" href="#">Tap here if nothing happens</a></p>
+  <script>
+    // Tesla redirects the browser here with ?code=...&state=... — hand it
+    // straight to the app via the custom URI scheme it registered.
+    var target = "teslaglyph://callback" + window.location.search;
+    document.getElementById("fallback").href = target;
+    window.location.href = target;
+  </script>
+</body>
+</html>
